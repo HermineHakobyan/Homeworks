@@ -1,0 +1,23 @@
+#man{
+    width: 300px;
+    height: 200px;
+    background:rgb(187, 228, 125)
+}
+
+#woman{
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+    background:rgb(250, 154, 186)
+
+    
+}
+#bt {
+    margin-top: 20px;
+    background:rgb(187, 228, 125)
+
+
+}
+#bt:hover{
+    background:rgb(250, 154, 186)
+}
