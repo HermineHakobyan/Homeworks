@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+   
+    background-color:rgb(228, 216, 216)
+  }
+  
+  main {
+    
+    height: 1000px; 
+  }
+  
+  
+  h1 {
+    
+    color: rgb(19, 17, 17);
+    font-family: system-ui, sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    
+  }
+  
+  .scrollToTopBtn {
+    background-color: rgb(24, 22, 22);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 1250px;
+   
+  }
+  
+  
