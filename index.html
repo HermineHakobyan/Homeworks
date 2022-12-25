@@ -4,58 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Photo editor</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="main">
-     <header class="head">Header</header>
-     <br>
-     <div class="first">
-        <div class="leftup">Hero</div><br>
-     <div class="leftmid">Sidebar</div>
-    </div>
-    <br>
-    <div class="second">
-        <div class="rightup">Main Content</div><br>
-        <div class="rightmid">Extra Content</div>
-    </div><br>
-    <div class="third">
-        <div class="left">Related Images</div>
-        <div class="right">Reloted Posted</div>
-    </div>
-    <br>
-        <footer class="foot">Footer</footer>
-    </div>
-    
-    <!-- second -->
-    <div class="smain">
-        <header class="header">Header</header><br>
-        <nav>
-        <div class="sleft">Sidebar</div><br>
-        <div class="smid">Main</div><br>
-        <div class="sright">Sidebar</div>
-        </nav>
-        <br>
-        
-        <footer class="footer">Footer</footer>
-
-    </div>
-
-    <div class=thirdmain>
-        <header id="head">Header</header><br>
-        <div id="middle">
-            <aside>Aside</aside>
-            <article>
-               <h1  style="color: blanchedalmond;">Article</h1>
-                <div class="div">Image</div>
-                <div class="div">Image</div>
-                <div class="div">Image</div>
-            </article>
-
+    <div class="sidebar">
+        <div class="image_filters">
+           <h2 type="button" data-toggle="collapse" data-target="#filters">Image Filters <span class="drop-down">&#9660;</span></h2>
+           <div class="collapse" id="filters">
+             <button class='btn btn-primary' id="btn" style="font-size: 25px;" onclick="grayscale()">GrayScale</button>
+             
+             <button class='btn btn-primary' id="btn" style="font-size: 25px;" onclick="bright()">Brighen</button>
+             <br>
+             <br>
+             <button class='btn btn-primary' id="btn" style="font-size: 25px;" onclick="dark()">Darken</button>
+             <button class="btn btn-primary" id="btn" style="font-size: 25px;" onclick="blur_effect()">Blur Effect</button>
+             <br>
+             <br>
+             <button class='btn btn-primary' id="btn" style="font-size: 25px;" onclick="emboss()">Emboss</button>
+             <button class='btn btn-primary' id="btn" style="font-size: 25px;" onclick="sharp()">Sharpen</button>
+           </div>
+           <div class="breaks">
+             <br>
+             <br>
+           </div>
         </div>
-        <br>
-        <footer id="footer">Footer</footer>
-    </div>
+        <div class="import_and_export">
+          <h2 type="button" data-toggle="collapse" data-target="#import_export">Import and Export <span class="drop-down">&#9660;</span></h2>
+          <div class="import_and_export_buttons">
+            <div class="collapse" id="import_export">
+             <div class="btn btn-primary" style="font-size: 25px;" onclick="selectImage()">
+               <input type="file" id="foto-file" accept="image/png"/>
+               Import Image
+             </div>
+             <button class="btn btn-primary" style="font-size: 25px;" onclick="download()">Export Image</button>
+           </div>
+          </div>
+        </div>
+        <div class="breaks">
+           <br>
+           <br>
+         </div>
+         <div class="edit">
+           <h2 type="button" data-toggle="collapse" data-target="#edit">Editing <span class="drop-down">&#9660;</span></h2>
+           <div class="collapse" id="edit">
+             <button class="btn btn-primary" style="font-size: 25px;" id="btn" onclick="crop()">Crop Image</button>
+             <button class="btn btn-primary" style="font-size: 25px;" id="btn" onclick="flip_img()">Flip Image</button>
+             <br><br>
+             <button class="btn btn-primary" onclick="makeTransparent()" style="font-size: 25px;" id="btn"><div id="color-preview"></div>Transparent</button>
+             <input type="color" id="colorize-color-picker" value="#00000" oninput="makeColorize(this)">
+             <button class="btn btn-primary" style="font-size: 25px;" id="btn" onclick="openColorPicker()">Colorize</button>
+           </div>
+         </div>
+      </div>
+      <div class="img-container">
+        <img id="foto-image" class="image"/>
+       </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>
